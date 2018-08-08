@@ -1,3 +1,6 @@
+function myFunction() {
+   document.getElementById("demo").innerHTML = "Paragraph changed.";
+}
 
 //jQuery time
 var current_fs, next_fs, previous_fs; //fieldsets

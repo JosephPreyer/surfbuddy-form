@@ -9,7 +9,7 @@ html {
 	/*Image only BG fallback*/
 	
 	/*background = gradient + image pattern combo*/
-	background-image: url("https://ec2-im-1.msw.ms/md/image.php?key=skeleton-bay-cover.jpg&type=EE_COVER&resize_type=COVER");
+	background-image: url("https://image.redbull.com/rbcom/010/2016-09-08/1331816616867_1/0001/1/2000/1/the-instant-all-of-the-travel-is-forgotten%E2%80%A6.jpg");
 }
 
 body {
@@ -128,6 +128,8 @@ body {
 	background: #27AE60;
 	color: white;
 }
+
+
 
 
 
