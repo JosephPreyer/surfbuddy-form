@@ -1,0 +1,56 @@
+
+<head>
+<link rel="stylesheet" href="assets/fullForm.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+<div class="wrapper">
+<h1>SurfBuddy</h1>
+<p1>Get notified when your favorite surf spots are working.</p1>
+</div>
+
+<!-- The entire login/signup box -->
+<div id="login-box">
+
+<!-- The register form (initially hidden) -->
+  <div class="left register">
+    <h1>Sign up</h1>
+    <form action = "userPage.html">
+    <input type="text" name="username" placeholder="Username" />
+    <input type="text" name="email" placeholder="E-mail" />
+    <input type="password" name="password" placeholder="Password" />
+    <input type="password" name="password2" placeholder="Retype password" />
+    <input type="submit" name="signup_submit" value="Submit" />
+    <a href="fullForm.html" onclick="showRegister()">Back</a>
+    
+    </form>
+  </div>
+ 
+ <!-- The login form -->
+    <div class="left login">
+    <h1>Log in</h1>
+    <form action = "userPage.html">
+    <input type="text" name="username" placeholder="Username" />
+    <input type="password" name="password" placeholder="Password" />
+    <a id="register" onclick="showRegister()">Register</a>
+    <input type="submit" name="login_submit" value="Sign in" />
+    </form>
+  </div>
+  
+ <!-- The social networks login form -->
+  <div class="right">
+    <span class="loginwith">Sign in with<br />social network</span>
+    <button class="social-signin facebook">Log in with Facebook</button>
+    <button class="social-signin twitter">Log in with Twitter</button>
+    <button class="social-signin google">Log in with Google+</button>
+  </div>
+  <div class="or">OR</div>
+</div>
+
+ <!-- JQuery to hide/show register/login-->
+<script type = "text/javascript">
+function showRegister() {
+	$('.login').hide();
+	$('.register').show();
+}
+
+</script>

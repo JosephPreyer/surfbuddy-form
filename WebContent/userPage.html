@@ -1,0 +1,31 @@
+<header>
+<link rel="stylesheet" href="assets/fullForm.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</header>
+
+
+<div id="login-box">
+<h1>Your saved notifications:</h1>
+<button onClick="create()">Create New</button>
+  <div class="centered-div create">
+  <select name="surfSpot">
+  <option selected disabled>Choose Surf Spot</option>
+  <option value="skeletonBay">Skeleton Bay</option>
+  <option value="llandudno">Mavericks</option>
+  <option value="muizenberg">Teahupoo</option>
+  <option value="bigBay">J-Bay</option>
+</select>
+    <input type="text" name="email" placeholder="E-mail" />
+    <input type="password" name="password" placeholder="Password" />
+    <input type="password" name="password2" placeholder="Retype password" />
+    
+    <input type="submit" name="signup_submit" value="Save" />
+  </div>
+</div>
+
+<script type = "text/javascript">
+function create() {
+	$('.create').show();
+}
+
+</script>
