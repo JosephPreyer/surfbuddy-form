@@ -1,31 +1,73 @@
 <header>
-<link rel="stylesheet" href="assets/fullForm.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<link rel="stylesheet" href="assets/fullForm.css">
+	<script
+		src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </header>
 
 
 <div id="login-box">
-<h1>Your saved notifications:</h1>
-<button onClick="create()">Create New</button>
-  <div class="centered-div create">
-  <select name="surfSpot">
-  <option selected disabled>Choose Surf Spot</option>
-  <option value="skeletonBay">Skeleton Bay</option>
-  <option value="llandudno">Mavericks</option>
-  <option value="muizenberg">Teahupoo</option>
-  <option value="bigBay">J-Bay</option>
-</select>
-    <input type="text" name="email" placeholder="E-mail" />
-    <input type="password" name="password" placeholder="Password" />
-    <input type="password" name="password2" placeholder="Retype password" />
-    
-    <input type="submit" name="signup_submit" value="Save" />
-  </div>
+	<h1>Your saved notifications:</h1>
+	<button id="create">Create New</button>
+	<div class="centered-div create">
+		<select id="surfSpot" name="surfSpot">
+			<option selected disabled>Choose Surf Spot</option>
+			<option value="Skeleton Bay">Skeleton Bay</option>
+			<option value="Mavericks">Mavericks</option>
+			<option value="Teahupoo">Teahupoo</option>
+			<option value="J-Bay">J-Bay</option>
+		</select> 
+		<input type="text" id="minimumS" placeholder="Minimum swell size" />
+		<input type="text" id="minimumP" placeholder="Minimum swell period" />
+		<select id="windD">
+			<option selected disabled>Wind Direction</option>
+			<option value="n">N</option>
+			<option value="ne">NE</option>
+			<option value="e">E</option>
+			<option value="se">SE</option>
+			<option value="s">S</option>
+			<option value="sw">SW</option>
+			<option value="w">W</option>
+			<option value="nw">NW</option>
+		</select> 
+		<input type="text" id="windS" placeholder="Maximum wind strength" />
+		<button id="save" name="create_notification" value="Save" onclick="showNotification()">Save</button>
+	</div>
+	<div id="notifications">
+	</div>
 </div>
 
-<script type = "text/javascript">
-function create() {
-	$('.create').show();
-}
+<script>
+$('#create').click(function(){
+	$('.create').show(); 
+});
 
+$('#save').click(function(){
+	var notification = document.createElement("p");
+	var para = document.createElement("p");
+	para.setAttribute("id", document.getElementById("surfSpot").value + "p");
+	var spot = document.createTextNode("Spot:" + document.getElementById("surfSpot").value);
+	var minimumS = document.createTextNode(" Min Swell:" + document.getElementById("minimumS").value);
+	var minimumP = document.createTextNode(" Min Period:" + document.getElementById("minimumP").value);
+	var windD = document.createTextNode(" Wind Direction:" + document.getElementById("windD").value);
+	var windS = document.createTextNode(" Wind Speed:" + document.getElementById("windS").value);
+	var deleteBtn = document.createElement("BUTTON");
+	deleteBtn.setAttribute("id", "deleteBtn");
+	deleteBtn.setAttribute("value", document.getElementById("surfSpot").value);
+	var t = document.createTextNode("Delete");
+	deleteBtn.appendChild(t);
+	para.appendChild(spot);
+	para.appendChild(minimumS);
+	para.appendChild(minimumP);
+	para.appendChild(windD);
+	para.appendChild(windS);
+	para.appendChild(deleteBtn);
+	var element = document.getElementById("notifications");
+	element.appendChild(para);
+	$('.create').hide(); 
+});
+
+/* Delete paragraph associated to given notification */
+$('#deleteBtn').click(function(){
+	$('.create').show(); 
+});
 </script>
