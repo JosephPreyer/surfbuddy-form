@@ -8,6 +8,7 @@
 <div id="login-box">
 	<h1>Your saved notifications:</h1>
 	<button id="create">Create New</button>
+	<button id="check">Check Forecast Now</button>
 	<div class="centered-div create">
 		<select id="surfSpot" name="surfSpot">
 			<option selected disabled>Choose Surf Spot</option>
@@ -30,7 +31,31 @@
 			<option value="nw">NW</option>
 		</select> 
 		<input type="text" id="windS" placeholder="Maximum wind strength" />
-		<button id="save" name="create_notification" value="Save" onclick="showNotification()">Save</button>
+		<button id="save" name="create_notification" value="Save" onclick="showNotification()">Save Notification</button>
+	</div>
+		<div class="centered-div check">
+		<select id="surfSpot" name="surfSpot">
+			<option selected disabled>Choose Surf Spot</option>
+			<option value="Skeleton Bay">Skeleton Bay</option>
+			<option value="Mavericks">Mavericks</option>
+			<option value="Teahupoo">Teahupoo</option>
+			<option value="J-Bay">J-Bay</option>
+		</select> 
+		<input type="text" id="minimumS" placeholder="Minimum swell size" />
+		<input type="text" id="minimumP" placeholder="Minimum swell period" />
+		<select id="windD">
+			<option selected disabled>Wind Direction</option>
+			<option value="n">N</option>
+			<option value="ne">NE</option>
+			<option value="e">E</option>
+			<option value="se">SE</option>
+			<option value="s">S</option>
+			<option value="sw">SW</option>
+			<option value="w">W</option>
+			<option value="nw">NW</option>
+		</select> 
+		<input type="text" id="windS" placeholder="Maximum wind strength" />
+		<button id="checkNow" name="check_now" value="Check" onclick="checkForecast()">Check Now</button>
 	</div>
 	<div id="notifications">
 	</div>
@@ -38,7 +63,13 @@
 
 <script>
 $('#create').click(function(){
+	$('.check').hide(); 
 	$('.create').show(); 
+});
+
+$('#check').click(function(){
+	$('.create').hide(); 
+	$('.check').show(); 
 });
 
 $('#save').click(function(){
